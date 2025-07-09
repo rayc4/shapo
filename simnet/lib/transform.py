@@ -10,7 +10,7 @@ Z_AXIS = np.array([0., 0., 1.])
 @dataclasses.dataclass
 class Pose:
   camera_T_object: np.ndarray
-  scale_matrix: np.ndarray = np.eye(4)
+  scale_matrix: np.ndarray = dataclasses.field(default_factory=np.eye(4))
 
 
 class Transform:

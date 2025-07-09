@@ -116,7 +116,6 @@ class PanopticModel(pl.LightningModule):
     log = {}
     return {'log': log}
 
-  @pl.data_loader
   def train_dataloader(self):
     return common.get_loader(
         self.hparams,
@@ -124,7 +123,6 @@ class PanopticModel(pl.LightningModule):
         preprocess_func=self.preprocess_func,
         datapoint_dataset=self.train_dataset
     )
-  @pl.data_loader
   def val_dataloader(self):
     return common.get_loader(self.hparams, "val", preprocess_func=self.preprocess_func)
 
