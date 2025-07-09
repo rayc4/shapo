@@ -68,9 +68,9 @@ def get_rgbnet(model_path):
     # Recover model and features
     # model_path = io.read_cfg_string(cfg, 'evaluation', 'output_path', default=None)
     if model_path:
-        rgbnet_dict = torch.load(os.path.join(model_path, 'reconstructor.pt'))
+        rgbnet_dict = torch.load(os.path.join(model_path, 'reconstructor.pt'), weights_only=False)
         model_dict = rgbnet_dict['model']
-        rgbnet.load_state_dict(model_dict)
+        rgbnet.load_state_dict(model_dict, strict=False)
     return rgbnet
 
 def get_rgb_from_rgbnet(latent_vector, pcd_dsdf, appearance_emb, rgbnet):

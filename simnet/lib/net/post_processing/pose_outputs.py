@@ -138,7 +138,7 @@ def extract_latent_emb_from_peaks(heatmap_output, peaks, shape_emb_output, appea
     index = np.zeros([2])
     index[0] = int(peaks[ii, 0] / scale_factor)
     index[1] = int(peaks[ii, 1] / scale_factor)
-    index = index.astype(np.int)
+    index = index.astype(int)
     
     shape_emb = shape_emb_output[index[0], index[1], :]
     shape_embeddings.append(shape_emb)
@@ -159,7 +159,7 @@ def extract_abs_pose_from_peaks(peaks, abs_pose_output, scale_factor=8):
     index = np.zeros([2])
     index[0] = int(peaks[ii, 0] / scale_factor)
     index[1] = int(peaks[ii, 1] / scale_factor)
-    index = index.astype(np.int)
+    index = index.astype(int)
     abs_pose_values = abs_pose_output[index[0], index[1], :]
     rotation_matrix = np.array([[abs_pose_values[0], abs_pose_values[1], abs_pose_values[2]],
                                 [abs_pose_values[3], abs_pose_values[4], abs_pose_values[5]],

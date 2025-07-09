@@ -438,7 +438,7 @@ def get_masks_out(seg_output, depth):
         continue
     out = np.zeros_like(depth)
     class_id_from_mask = category_seg_output[center[0], center[1]]
-    class_ids.append(np.int(class_id_from_mask))
+    class_ids.append(int(class_id_from_mask))
     class_ids_name.append(class_id_from_mask)
     class_centers.append((center[1], center[0]))
     cv2.drawContours(out, [idx], -1, 255, cv2.FILLED, 1)
