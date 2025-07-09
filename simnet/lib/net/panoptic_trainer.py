@@ -21,7 +21,6 @@ class PanopticModel(pl.LightningModule):
       self, hparams, epochs=None, train_dataset=None, eval_metric=None, preprocess_func=None
   ):
     super().__init__()
-
     self.hparams = hparams
     self.epochs = epochs
     self.train_dataset = train_dataset

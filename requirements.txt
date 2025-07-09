@@ -17,14 +17,14 @@ future
 imageio
 matplotlib
 matplotlib-inline
-numpy
+numpy<2.0
 opencv-python
 pathtools
 Pillow
 pyparsing
 fvcore
 PyYAML
-pytorch-lightning
+pytorch-lightning==0.7.5
 scikit-image
 scipy
 torch
